@@ -1,0 +1,32 @@
+
+am__csr6: assume property (spy_mode |-> u_vscale_core.pipeline.htif_pcr_req_ready == u_vscale_core2.pipeline.htif_pcr_req_ready);
+am__csr7: assume property (spy_mode |-> u_vscale_core.pipeline.htif_pcr_resp_valid == u_vscale_core2.pipeline.htif_pcr_resp_valid);
+am__csr8: assume property (spy_mode |-> u_vscale_core.pipeline.htif_pcr_resp_data == u_vscale_core2.pipeline.htif_pcr_resp_data);
+
+//If we blackbox a module, we can assume outputs are equal after flush. Assert that that inputs are equal.
+//Basically treat these blackboxed module as outside the DUT!
+am__csr1: assume property (spy_mode |-> u_vscale_core.pipeline.prv == u_vscale_core2.pipeline.prv);
+am__csr2: assume property (spy_mode |-> u_vscale_core.pipeline.illegal_csr_access == u_vscale_core2.pipeline.illegal_csr_access);
+am__csr3: assume property (spy_mode |-> u_vscale_core.pipeline.csr_rdata == u_vscale_core2.pipeline.csr_rdata);
+am__csr4: assume property (spy_mode |-> u_vscale_core.pipeline.handler_PC == u_vscale_core2.pipeline.handler_PC);
+am__csr5: assume property (spy_mode |-> u_vscale_core.pipeline.epc == u_vscale_core2.pipeline.epc);
+
+wire csr_equal = (u_vscale_core.pipeline.prv == u_vscale_core2.pipeline.prv) &&
+ (u_vscale_core.pipeline.illegal_csr_access == u_vscale_core2.pipeline.illegal_csr_access) &&
+ (u_vscale_core.pipeline.csr_rdata == u_vscale_core2.pipeline.csr_rdata) &&
+ (u_vscale_core.pipeline.handler_PC == u_vscale_core2.pipeline.handler_PC) &&
+ (u_vscale_core.pipeline.epc == u_vscale_core2.pipeline.epc);
+
+wire reg_file_same = (u_vscale_core.pipeline.regfile.data == u_vscale_core2.pipeline.regfile.data);
+wire PC_equal = (u_vscale_core.pipeline.PC_PIF == u_vscale_core2.pipeline.PC_PIF) &&
+ (u_vscale_core.pipeline.PC_IF == u_vscale_core2.pipeline.PC_IF) &&
+ (u_vscale_core.pipeline.PC_DX == u_vscale_core2.pipeline.PC_DX) &&
+ (u_vscale_core.pipeline.PC_WB == u_vscale_core2.pipeline.PC_WB);
+ 
+wire dx_stage = u_vscale_core.pipeline.rs1_data == u_vscale_core2.pipeline.rs1_data && 
+		u_vscale_core.pipeline.inst_DX == u_vscale_core2.pipeline.inst_DX;
+wire writeback = !u_vscale_core.pipeline.stall_WB && !u_vscale_core2.pipeline.stall_WB;
+
+assign architectural_state_eq = reg_file_same && csr_equal && PC_equal && dx_stage && writeback;
+
+endmodule

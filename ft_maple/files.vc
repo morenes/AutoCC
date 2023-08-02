@@ -1,0 +1,23 @@
++libext+.v
++libext+.h
++libext+.sv
++libext+.tmp.v
++librescan
++incdir+${DUT_PATH}
+-y ${DUT_PATH}
++incdir+${SRC_PATH0}
+-y ${SRC_PATH0}
++incdir+${SRC_PATH1}
+-y ${SRC_PATH1}
++incdir+${SRC_PATH2}
+-y ${SRC_PATH2}
++incdir+${SRC_PATH3}
+-y ${SRC_PATH3}
++incdir+${INC_PATH}
+-y ${INC_PATH}
+${PROP_PATH}/is_core_prop.sv
+${PROP_PATH}/is_core_bind.svh
+${AUTOCC_ROOT}/ft_maple/ft_dcp_pipe/sva/dcp_pipe_prop.sv
+${AUTOCC_ROOT}/ft_maple/ft_dcp_pipe/sva/dcp_pipe_bind.svh
+${DUT_ROOT}/is_core.v
+${DUT_ROOT}/is_core_wrap.sv

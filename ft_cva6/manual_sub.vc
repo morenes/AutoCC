@@ -1,0 +1,33 @@
++define+WT_DCACHE=1
+
+// Not needed for now
+-bbox_m perf_counters
+-bbox_m mult
+-bbox_m fpu_wrap
+-bbox_m csr_regfile
+
+${DUT_PATH}/axi/src/axi_pkg.sv
+${INC_PATH}/cv64a6_imafdc_sv39_config_pkg.sv
+${INC_PATH}/riscv_pkg.sv
+${INC_PATH}/ariane_dm_pkg.sv
+${INC_PATH}/../../vendor/pulp-platform/axi/src/axi_pkg.sv
+${INC_PATH}/../../vendor/pulp-platform/tech_cells_generic/src/rtl/tc_sram.sv
+${INC_PATH}/ariane_pkg.sv
+${INC_PATH}/ariane_rvfi_pkg.sv
+${INC_PATH}/cvxif_pkg.sv
+
+${INC_PATH}/../tb/ariane_soc_pkg.sv
+${INC_PATH}/ariane_axi_pkg.sv
+${DUT_PATH}/fpu/src/fpnew_pkg.sv
+${SRC_PATH2}/cf_math_pkg.sv
+#${SRC_PATH2}/../../tech_cells_generic/src/rtl/tc_sram.sv 
+${SRC_PATH1}/sram.sv
+${DUT_PATH}/ariane_regfile_ff.sv
+${DUT_PATH}/pmp/src/pmp.sv
+${DUT_PATH}/pmp/src/pmp_entry.sv
+-y ${DUT_PATH}/axi/include
+-y ${DUT_PATH}/cache_subsystem
+-y ${DUT_PATH}/frontend/
+-y ${DUT_PATH}/register_interface/src/
+${INC_PATH}/std_cache_pkg.sv
+${INC_PATH}/wt_cache_pkg.sv

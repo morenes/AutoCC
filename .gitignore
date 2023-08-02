@@ -1,0 +1,14 @@
+aes
+cva6
+openpiton
+
+vscale
+ft_vscale_core
+
+projs
+sigs
+*.sig~
+
+jgproject
+*/FPV_cvr/*
+*/FPV_prv/*

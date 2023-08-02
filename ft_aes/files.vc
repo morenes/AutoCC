@@ -1,0 +1,10 @@
++libext+.v
++libext+.h
++libext+.sv
++libext+.tmp.v
++librescan
++incdir+${DUT_PATH}
+-y ${DUT_PATH}
+${PROP_PATH}/aes_wrap_prop.sv
+${PROP_PATH}/aes_wrap_bind.svh
+${DUT_ROOT}/aes_wrap.v
