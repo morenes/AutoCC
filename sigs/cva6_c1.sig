@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wavelist version="3">
-  <insertion-point-position>22</insertion-point-position>
+  <insertion-point-position>12</insertion-point-position>
   <wave>
     <expr>clk_i</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_cva6_sva.rst_ni</expr>
     <label/>
     <radix/>
   </wave>
@@ -41,54 +36,9 @@
     <label/>
     <radix/>
   </wave>
-  <wave>
-    <expr>u_cva6_sva.check</expr>
-    <label/>
-    <radix/>
-  </wave>
   <group collapsed="false">
     <expr/>
     <label>&lt;&lt;Target&gt;&gt;::tx</label>
-    <wave collapsed="true">
-      <expr>ariane1.controller_i.fence_t_state_q</expr>
-      <label/>
-      <radix>ariane1.controller_i.fence_t_state_q</radix>
-    </wave>
-    <wave collapsed="true">
-      <expr>ariane2.controller_i.fence_t_state_q</expr>
-      <label/>
-      <radix>ariane2.controller_i.fence_t_state_q</radix>
-    </wave>
-    <wave collapsed="true">
-      <expr>ariane1.genblk3.i_cache_subsystem.i_cva6_icache.dreq_o.data</expr>
-      <label/>
-      <radix/>
-    </wave>
-    <wave collapsed="true">
-      <expr>ariane2.genblk3.i_cache_subsystem.i_cva6_icache.dreq_o.data</expr>
-      <label/>
-      <radix/>
-    </wave>
-    <wave collapsed="true">
-      <expr>ariane1.genblk3.i_cache_subsystem.i_cva6_icache.cl_hit</expr>
-      <label/>
-      <radix/>
-    </wave>
-    <wave collapsed="true">
-      <expr>ariane2.genblk3.i_cache_subsystem.i_cva6_icache.cl_hit</expr>
-      <label/>
-      <radix/>
-    </wave>
-    <wave>
-      <expr>ariane1.genblk3.i_cache_subsystem.i_cva6_icache.areq_i.fetch_exception.valid</expr>
-      <label/>
-      <radix/>
-    </wave>
-    <wave>
-      <expr>ariane2.genblk3.i_cache_subsystem.i_cva6_icache.areq_i.fetch_exception.valid</expr>
-      <label/>
-      <radix/>
-    </wave>
     <wave>
       <expr>ariane1.i_frontend.i_instr_realign.instr_is_compressed[0]</expr>
       <label/>
@@ -101,12 +51,12 @@
     </wave>
   </group>
   <wave collapsed="true">
-    <expr>ariane1.i_frontend.npc_q</expr>
+    <expr>ariane1.i_frontend.i_instr_queue.pc_q</expr>
     <label/>
     <radix/>
   </wave>
   <wave collapsed="true">
-    <expr>ariane2.i_frontend.npc_q</expr>
+    <expr>ariane2.i_frontend.i_instr_queue.pc_q</expr>
     <label/>
     <radix/>
   </wave>

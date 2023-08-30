@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # Define the directories
 DIR=$DUT_ROOT

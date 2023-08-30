@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wavelist version="3">
-  <insertion-point-position>11</insertion-point-position>
+  <insertion-point-position>10</insertion-point-position>
   <wave>
     <expr>clk</expr>
     <label/>
@@ -52,16 +52,6 @@
     <radix>u_vscale_core.pipeline.ctrl.opcode</radix>
   </wave>
   <wave collapsed="true">
-    <expr>u_vscale_core.pipeline.csr_rdata</expr>
-    <label/>
-    <radix>u_vscale_core.pipeline.csr_rdata</radix>
-  </wave>
-  <wave collapsed="true">
-    <expr>u_vscale_core2.pipeline.csr_rdata</expr>
-    <label/>
-    <radix>u_vscale_core2.pipeline.csr_rdata</radix>
-  </wave>
-  <wave collapsed="true">
     <expr>u_vscale_core_sva.imem_haddr</expr>
     <label/>
     <radix/>
@@ -91,21 +81,6 @@
     <label/>
     <radix>u_vscale_core_sva.dmem_htrans</radix>
   </wave>
-  <wave>
-    <expr>u_vscale_core.imem_bridge.core_mem_en</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave collapsed="true">
-    <expr>u_vscale_core2.pipeline.csr.handler_PC</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave collapsed="true">
-    <expr>u_vscale_core.pipeline.csr.handler_PC</expr>
-    <label/>
-    <radix/>
-  </wave>
   <wave collapsed="true">
     <expr>u_vscale_core.pipeline.PC_IF</expr>
     <label/>
@@ -125,16 +100,6 @@
     <expr>u_vscale_core2.pipeline.PC_PIF</expr>
     <label/>
     <radix/>
-  </wave>
-  <wave collapsed="true">
-    <expr>u_vscale_core2.pipeline.PCmux.base</expr>
-    <label/>
-    <radix>u_vscale_core2.pipeline.PCmux.base</radix>
-  </wave>
-  <wave collapsed="true">
-    <expr>u_vscale_core.pipeline.PCmux.base</expr>
-    <label/>
-    <radix>u_vscale_core.pipeline.PCmux.base</radix>
   </wave>
   <wave>
     <expr>u_vscale_core.pipeline.ctrl.stall_IF</expr>
@@ -157,16 +122,6 @@
     <radix>u_vscale_core2.pipeline.PCmux.PC_src_sel</radix>
   </wave>
   <wave>
-    <expr>u_vscale_core.pipeline.ctrl.dmem_en</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core2.pipeline.ctrl.dmem_en</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
     <expr>u_vscale_core.pipeline.kill_IF</expr>
     <label/>
     <radix/>
@@ -175,151 +130,6 @@
     <expr>u_vscale_core2.pipeline.kill_IF</expr>
     <label/>
     <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core.pipeline.ctrl.stall_DX</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core2.pipeline.ctrl.stall_DX</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core.pipeline.ctrl.ex_DX</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core2.pipeline.ctrl.ex_DX</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core.pipeline.ctrl.kill_DX</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core2.pipeline.ctrl.kill_DX</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core.pipeline.ctrl.had_ex_DX</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core2.pipeline.ctrl.had_ex_DX</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core.pipeline.ctrl.uses_md</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core2.pipeline.ctrl.uses_md</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core.pipeline.ctrl.md_resp_valid</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core2.pipeline.ctrl.md_resp_valid</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave collapsed="true">
-    <expr>u_vscale_core.pipeline.md.state</expr>
-    <label/>
-    <radix>u_vscale_core.pipeline.md.state</radix>
-  </wave>
-  <wave collapsed="true">
-    <expr>u_vscale_core2.pipeline.md.state</expr>
-    <label/>
-    <radix>u_vscale_core2.pipeline.md.state</radix>
-  </wave>
-  <wave>
-    <expr>u_vscale_core.pipeline.ctrl.uses_md_WB</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core2.pipeline.ctrl.uses_md_WB</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core.pipeline.ctrl.illegal_csr_access</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core2.pipeline.ctrl.illegal_csr_access</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core.pipeline.ctrl.dmem_access_exception</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core2.pipeline.ctrl.dmem_access_exception</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core.pipeline.ctrl.ex_WB</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core.pipeline.ctrl.dmem_badmem_e</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core2.pipeline.ctrl.ex_WB</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core.pipeline.ctrl.stall_WB</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core2.pipeline.ctrl.stall_WB</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core2.dmem_bridge.hready</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>u_vscale_core2.pipeline.ctrl.dmem_en_WB</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave collapsed="true">
-    <expr>u_vscale_core.pipeline.imem_rdata</expr>
-    <label/>
-    <radix>u_vscale_core.pipeline.imem_rdata</radix>
-  </wave>
-  <wave collapsed="true">
-    <expr>u_vscale_core2.pipeline.imem_rdata</expr>
-    <label/>
-    <radix>u_vscale_core2.pipeline.imem_rdata</radix>
   </wave>
   <wave collapsed="true">
     <expr>u_vscale_core.pipeline.ctrl.opcode</expr>
@@ -669,21 +479,6 @@
       <radix/>
     </wave>
   </group>
-  <wave collapsed="true">
-    <expr>u_vscale_core.pipeline.epc</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave collapsed="true">
-    <expr>u_vscale_core2.pipeline.epc</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave collapsed="true">
-    <expr>u_vscale_core.pipeline.csr.exception_PC</expr>
-    <label/>
-    <radix/>
-  </wave>
   <wave collapsed="true">
     <expr>u_vscale_core.pipeline.PC_WB</expr>
     <label/>

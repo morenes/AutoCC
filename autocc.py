@@ -94,9 +94,9 @@ def parse_args():
   parser.add_argument("-as", "--submodule_assert", nargs="+", type=str, default=[], help="List of submodules for which ASSERT the behavior of outgoing transactions.")
   parser.add_argument("-am", "--submodule_assume", nargs="+", type=str, default=[], help="List of submodules for which ASSUME the behavior of outgoing transactions (ASSUME can constrain the DUT).")
   parser.add_argument("-x", "--xprop_macro", nargs="?", type=str, const = "NONE", help="Generate X Propagation assertions, specify argument to create property under <MACRO> (default none)")
-  parser.add_argument("-tool", nargs="?", type=str, const = "jasper", help="Backend tool to use [jasper|sby] (default jasper)")
+  parser.add_argument("-tool", nargs="?", type=str, const = "jasper", default="jasper", help="Backend tool to use [jasper|sby] (default jasper)")
   parser.add_argument("-v", "--verbose", action='store_true', help="Add verbose output.")
-  parser.add_argument("-m", "--mode", nargs="?", type=str, const = "autocc", help="Mode to use [autocc|autocc_only_wrap|autosva] (default autocc)")
+  parser.add_argument("-mode", nargs="?", type=str, const = "autocc",  default="autocc", help="Mode to use [autocc|autocc_only_wrap|autosva] (default autocc)")
   args = parser.parse_args()
   return args
 
