@@ -1,4 +1,6 @@
 
+![LOGO](https://github.com/morenes/AutoCC/assets/55038083/6f578a9e-36ae-4641-8585-ca38cf50346f)
+
 # Requirements
 
 - **JasperGold (JG) 2019.12 or newer** (tested with 2019.12 and 2021.03). To run the Formal Testbenches.
