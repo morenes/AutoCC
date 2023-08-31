@@ -18,7 +18,7 @@ else
         # if maple folder does not exist
         if [ ! -d "maple" ]; then
             git clone https://github.com/PrincetonUniversity/maple.git
-            cd maple; git checkout 2abe2d06c367c15910181ad4f3e7f0c59af32b64
+            cd maple; git checkout 91ebe23a052869f27b48318c96d6ef1978aa9b56
             cd $AUTOCC_ROOT
             python autocc.py -f is_core.v -m autocc_only_wrap
             rm -rf $AUTOCC_ROOT/ft_is_core

@@ -10,6 +10,7 @@
 # Installation
 
     git clone https://github.com/morenes/AutoCC.git;
+    git checkout v1.0;
     cd AutoCC;
     export AUTOCC_ROOT=$PWD;
 
@@ -28,31 +29,29 @@ Clone the VSCALE repo
 
 Fixes a combinational loop in the original RTL that prevents JasperGold (JG) from running.
 
+    export DUT_ROOT=$PWD/vscale/src/main/verilog;
     ./fixes/fix_combo_loop_vscale_rtl.sh
-
 
 Generate the Vscale Formal Testbench (FT) using AutoCC.
 
-    export DUT_ROOT=$PWD/vscale/src/main/verilog;
-    python autocc.py -f vscale_core.v  -i vscale_ctrl_constants.vh;
+    python3 autocc.py -f vscale_core.v  -i vscale_ctrl_constants.vh;
 
 
 Run JG on the generated testbench.
 
     jg ft_vscale_core/FPV.tcl -proj projs/vscale_init &
 
-**CEX.** The tool should find a CEX to the assertion *as__dmem_hwrite*
-in under a second with a depth of 6 cycles.
+**CEX.** The tool should find a CEX (of at least 6 cycles) to the assertion *as__dmem_hwrite*
 
 **GUI.** Clicking on the assertion the GUI opens a waveform window. To visualize the CEX, we add a list of signals to the waveform window. We can use the signal list in the file vscale.sig. To load the signal list, go to **File > Load Signal List**, and select vscale.sig from the sigs folder.
 
-**Waveform.** In the waveform we would see spy_mode starting in cycle 5. Then, hwrite signal since the opcode is different in cycle 6 (ctrl.opcode).
+**Waveform.** In the waveform we would see spy_mode starting in cycle 5. Then, hwrite  signal is different in the last cycle because the opcode was different a cycle before (ctrl.opcode).
 This is because the PC is different (PC_IF), since the branch was taken in one universe and not in the other, because the register file data was different (regfile.data).
 
 **FIX.** 
 As described in the paper, this is an underconstraint in the testbench, since the testbench does not constrain the register file data to be the same in both universes when the spy_mode starts. We fix this by adding conditions to the testbench and re-running JG.
 
-    .fixes/fix_underconstrain_vscale.sh;
+    ./fixes/fix_underconstrain_vscale.sh;
     jg ft_vscale_core/FPV.tcl -proj projs/vscale_fixed &
 
 
@@ -102,6 +101,7 @@ We apply the fix by checking out a branch with the patch already included.
     cd cva6; git checkout autocc_fix_cex2; cd ..;
     jg ft_cva6/FPV.tcl -proj projs/cva6_fix_cex2 &
 
+The previous CEX trace should not be found anymore due to the fix. We have not continued debugging possible CEXs that may appear to this or other assertions.
 
 
 
@@ -133,19 +133,22 @@ While JG is running, we can reproduce the covert channel (that we will find with
 
 ### Reproducing the covert channel in RTL Simulation
 
-To run the attack that reveal the secret key (0xdeadbeef), we do the following:
+To run the attack that reveal the secret key, we do the following:
 
         cd openpiton/maple;
         ./run_test.sh 4;
 
 The recovered secret should be 0xdeadbeef.
+The reported cycle count should be less than 6000 cycles.
+
+
 We now apply the fixes to close the covert channel.
 
-        git checkout main;
+        git checkout fa614fc;
         source ../../maple_setup_build.sh
         ./run_test.sh 4;
 
-Now the recovered secret should be 0x0, since the covert channel is closed.
+The recovered secret should be 0x00000000. This indicates that the secret cannot be extracted using this channel anymore
 
 ### CEX on the FT
 
