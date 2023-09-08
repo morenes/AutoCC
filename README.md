@@ -165,9 +165,10 @@ Clone the AES repo:
 
     cd $AUTOCC_ROOT
     git clone https://github.com/morenes/aes.git
+    git checkout AutoCC-AE
 
 We run JG on the AES testbench, with the DUT being the RTL of the AES accelerator.
 This testbench already includes the architectural modeling described in Section 4.4 of the paper, to avoid spurious CEXs.
 The result of this run should be full-proof, i.e., no CEXs found, in less than 6 hours.
 
-    jg ft_aes_wrap/FPV.tcl -proj projs/aes &
+    jg ft_aes/FPV.tcl -proj projs/aes &
