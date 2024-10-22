@@ -482,6 +482,8 @@ def write_line(prop, line):
         if not any(x in line for x in keywords):
             if "," in line:
                 prop.write("\t\t" + line.split(",")[0] + "_2,\n")
+            elif "//" in line:
+                prop.write("\t\t" + line.split("//")[0].strip() + "_2,\n")
             else:
                 prop.write("\t\t" + line.split("\n")[0] + "_2,\n")
     prop.write("\t\t" + line)
