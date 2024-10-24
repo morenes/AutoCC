@@ -465,7 +465,7 @@ def create_wrapper(rtl, wrap):
                     wrap.write("\t\t" + line)
                 annotation = None
 
-        elif not parsed_module_sec:
+        elif not parsed_module_sec or line.startswith("import"):
             if (not parsed_disclaimer_sec) and (not line.startswith("//")):
                 parsed_disclaimer_sec = True
                 gen_disclaimer(wrap,True)
@@ -589,7 +589,7 @@ def parse_global(rtl, prop, bind):
                     prop.write("\t\t" + line)
                 annotation = None
 
-        elif not parsed_module_sec:
+        elif not parsed_module_sec or line.startswith("import"):
             if (not parsed_disclaimer_sec) and (not line.startswith("//")):
                 parsed_disclaimer_sec = True
                 gen_disclaimer(prop,True)
